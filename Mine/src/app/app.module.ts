@@ -20,13 +20,15 @@ import { MessageModule } from './messages/message.module';
   imports: [
     BrowserModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(ProductData, { delay: 1000 }),
+    InMemoryWebApiModule.forRoot(ProductData, { delay: 1000 }), //simulates a backend web server for getting a saving data.
+    RouterModule.forRoot([
+      { path: "welcome", component: WelcomeComponent},
+      { path: '', redirectTo: "welcome", pathMatch: "full" },
+      { path: "**", component: PageNotFoundComponent}
+    ]),
     ProductModule,
     UserModule,
-    MessageModule,
-    RouterModule.forRoot([
-      
-    ])
+    MessageModule
   ],
   declarations: [
     AppComponent,
