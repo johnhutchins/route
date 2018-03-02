@@ -9,12 +9,13 @@ import { ProductService } from './product.service';
 
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { ProductGuardService } from './product-guard.service';
 
 @NgModule({
   imports: [
     SharedModule, 
     RouterModule.forChild([
-      { path: "products", component: ProductListComponent}
+      { path: "products", component: ProductListComponent, canActivate: [ProductGuardService]}
     ]) 
   ],
   declarations: [
@@ -24,7 +25,8 @@ import { RouterModule } from '@angular/router';
     ProductFilterPipe
   ],
   providers: [
-    ProductService
+    ProductService,
+    ProductGuardService
   ]
 })
 export class ProductModule {}
