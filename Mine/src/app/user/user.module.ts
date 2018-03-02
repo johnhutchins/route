@@ -11,7 +11,7 @@ import { ProductListComponent } from '../products/product-list.component';
   imports: [
     SharedModule,
     RouterModule.forChild([
-      { path: "products", component: ProductListComponent }
+      { path: "login", component: LoginComponent }
     ])
   ],
   declarations: [

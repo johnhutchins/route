@@ -15,8 +15,9 @@ export class AppComponent {
     logOut(): void {
         this.authService.logout();
         this.router.navigate(["/welcome"]);
-        
+
         //no secondary route is used with the below code
+        //navigateByUrl() will remove the secondary routes after the user logs out.
         //this.router.navigateByUrl('/welcome');
         console.log('Log out');
     }

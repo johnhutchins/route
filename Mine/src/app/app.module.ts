@@ -24,7 +24,8 @@ import { LoginComponent } from './user/login.component';
     InMemoryWebApiModule.forRoot(ProductData, { delay: 1000 }), //simulates a backend web server for getting a saving data.
     RouterModule.forRoot([
       { path: "welcome", component: WelcomeComponent},
-      { path: "user", component: LoginComponent },
+      //see user.module for routing to the login page. keeping that route with it's sister component is best practice
+      //{ path: "user", component: LoginComponent },
       { path: '', redirectTo: "welcome", pathMatch: "full" },
       { path: "**", component: PageNotFoundComponent}
     ]),
