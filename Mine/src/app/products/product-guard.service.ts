@@ -11,8 +11,14 @@ export class ProductGuardService implements CanActivate {
     if (this.authService.isLoggedIn()){
         return true;
     } else {
-        this.router.navigate(["/welcome"]);
+        this.router.navigate(["/login"]);
         return false;
+    }
+  }
+
+  ngOnInit(): void {
+    if (!this.authService.isLoggedIn()){
+        alert("you aren't logged in!");
     }
   }
 
